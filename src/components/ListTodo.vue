@@ -30,20 +30,19 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+ul {
+  width: 90%;
+  margin: 0 auto;
+  border: 3px solid #e8e0cf;
+  padding: 20px 0;
+  margin-top: 40px;
+  border-radius: 30px;
+}
 h3 {
   margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #919191;
 }
 </style>

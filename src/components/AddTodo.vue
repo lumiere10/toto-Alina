@@ -29,8 +29,6 @@ export default {
   methods:{
     addTodo() {
       this.$emit('AddTodo', this.newTodo)
-      console.log
-
     },
     }
 
@@ -39,18 +37,32 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
+form {
+  display: flex;
   margin: 40px 0 0;
+  align-items: end;
+  justify-content: center;
 }
-ul {
-  list-style-type: none;
+button {
   padding: 0;
+  border: none;
+  background: none;
+  color: #a092d2;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
-li {
+input {
   display: inline-block;
   margin: 0 10px;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid;
+  border-color: #a092d2;
+  width: 30%;
+  font-size: 2rem;
 }
-a {
-  color: #42b983;
+input:focus{
+  outline: none;
 }
 </style>

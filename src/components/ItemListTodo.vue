@@ -39,18 +39,36 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+
+
 li {
-  display: inline-block;
-  margin: 0 10px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: 5% 15% auto auto 10%;
+  padding: 20px 40px;
+
 }
-a {
-  color: #42b983;
+li:not(:last-child) {
+  border-bottom: 3px solid #e8e0cf;
 }
+
+ li div{
+   list-style-type: none;
+   padding: 0;
+   font-size: 1.5rem;
+}
+ li button{
+   background: none;
+   box-shadow: none;
+   border: 2px solid #a092d2;
+   border-radius: 11px;
+   font-size: 1.1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0;
+   line-height: 1.1;
+   text-transform: uppercase;
+   font-weight: 500;
+ }
 </style>
