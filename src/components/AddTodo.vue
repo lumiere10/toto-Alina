@@ -2,9 +2,14 @@
   <title-todo></title-todo>
   <div class="todo">
     <div class="todo__add__item">
-      <form @submit.prevent="addTodo">
-        <input type="text" name="task" id="task" v-model="newTodo">
-        <button type="submit"> Добавить</button>
+      <form @submit.prevent>
+        <input
+            type="text"
+            name="task"
+            id="task"
+            v-model="nameItemTodo"
+            placeholder="Введите задачу">
+        <button type="submit" :class="{'disabled-btn': disabledButton}" :disabled="disabledButton" @click="addTodoItem"> Добавить</button>
       </form>
     </div>
   </div>
@@ -18,18 +23,22 @@ export default {
   components: {
     TitleTodo
   },
-  props: {
-    msg: String
-  },
-  date(){
+  data(){
     return {
-      newTodo: ''
+      nameItemTodo:''
+    }
+  },
+  computed:{
+    disabledButton(){
+      return !this.nameItemTodo.length
     }
   },
   methods:{
-    addTodo() {
-      this.$emit('AddTodo', this.newTodo)
+    addTodoItem() {
+      this.$emit('addTodoInList', this.nameItemTodo)
+      this.nameItemTodo=''
     },
+
     }
 
 }
@@ -51,6 +60,11 @@ button {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+.disabled-btn{
+  cursor: not-allowed;
+  opacity: .5;
 }
 input {
   display: inline-block;
@@ -64,5 +78,15 @@ input {
 }
 input:focus{
   outline: none;
+}
+@media screen and (max-width: 480px) {
+form{
+  flex-direction: column;
+  align-items: center;
+}
+  input{
+    width: 90%;
+    margin-bottom: 2rem;
+  }
 }
 </style>

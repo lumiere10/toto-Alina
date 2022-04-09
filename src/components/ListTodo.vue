@@ -1,9 +1,10 @@
 <template>
     <ul>
         <item-list-todo
-            v-on:remove="removeFromList" v-model="removeFromList" > </item-list-todo>
+        :list-item="list"
+        />
+      <li class="info" v-if="checkListLength">Нет записей!!!</li>
     </ul>
-  <h3>Нет записей!!!</h3>
 </template>
 
 <script>
@@ -18,15 +19,6 @@ export default {
     }
   },
 
-  methods:{
-
-    removeFromList(id) {
-      console.log(this)
-      this.todo = this.list.filter(item => item.id !== id)
-
-    }
-  }
-
 }
 </script>
 
@@ -38,11 +30,19 @@ ul {
   padding: 20px 0;
   margin-top: 40px;
   border-radius: 30px;
+  max-height: 35vw;
+  overflow: auto;
 }
-h3 {
-  margin: 40px 0 0;
+.info {
+  margin: 0;
   font-size: 2rem;
   text-transform: uppercase;
   color: #919191;
+  list-style-type: none;
+}
+@media screen and (max-width: 480px) {
+  ul{
+    max-height: 130vw;
+  }
 }
 </style>
