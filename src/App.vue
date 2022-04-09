@@ -33,6 +33,22 @@ export default {
     getIdNewItem(){
       return this.list.length ? this.list[this.list?.length-1].id + 1 : 1
     },
+    formattedDate(){
+      let today = new Date();
+      let dd = today.getDate();
+      let mm = today.getMonth() + 1;
+      let yyyy = today.getFullYear();
+      if (dd < 10) {
+        dd = '0' + dd;
+      }
+      if (mm < 10) {
+        mm = '0' + mm;
+      }
+      let time = today.toLocaleTimeString()
+      today = dd + '.' + mm + '.' + yyyy
+       return  `${today} ${time}`;
+
+    },
     addTodo(newItemTodo) {
       let pattern = /\d+/g;
       let numbers = newItemTodo.match(pattern)
