@@ -61,7 +61,10 @@ export default {
       console.log(newItemTodo);
       this.list.push(newTask);
     },
-
+    removeItem(id) {
+      console.log(id, "id");
+      this.list = this.list.filter(item => item.id !== id)
+    },
 
   }
 }

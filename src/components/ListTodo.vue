@@ -2,6 +2,7 @@
     <ul>
         <item-list-todo
         :list-item="list"
+        @remove="removeItem"
         />
       <li class="info" v-if="checkListLength">Нет записей!!!</li>
     </ul>
@@ -18,7 +19,13 @@ export default {
       required: true
     }
   },
+  methods: {
+    removeItem(id) {
+      this.$emit('remove', id);
 
+
+    },
+  }
 }
 </script>
 

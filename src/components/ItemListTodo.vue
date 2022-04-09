@@ -7,6 +7,7 @@
     <button
         name="remove"
         type="submit"
+        @click="removeTodoItem(todo.id)"
     >удалить</button>
   </li>
 
@@ -24,6 +25,9 @@ export default {
   },
   methods: {
 
+    removeTodoItem(id) {
+      this.$emit('remove', id);
+    },
 
   }
 }
