@@ -19,6 +19,11 @@ export default {
       required: true
     }
   },
+  computed: {
+    checkListLength() {
+      return !this.list?.length;
+    },
+  },
   methods: {
     removeItem(id) {
       this.$emit('remove', id);
