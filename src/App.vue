@@ -2,7 +2,8 @@
   <AddTodo
       @addTodoInList="addTodo"
   />
-<list-todo :list="list"/>
+<list-todo :list="list"
+           @remove="removeItem"/>
 
 </template>
 
@@ -60,6 +61,8 @@ export default {
       }
       console.log(newItemTodo);
       this.list.push(newTask);
+
+
     },
     removeItem(id) {
       console.log(id, "id");
