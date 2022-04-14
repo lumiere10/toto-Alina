@@ -57,7 +57,7 @@ export default {
         id: this.getIdNewItem(),
         date: this.formattedDate(),
         title: newItemTodo,
-        numbers: numbers.join(' ')
+        numbers: numbers?.join(' ') ? numbers.join(' ') : 'нет цифр'
       }
       console.log(newItemTodo);
       this.list.push(newTask);
